@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family:  "Montserrat", "sans-serif";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+:root{
+    --black: #16161d;
+    --white: #fff;
+    --light-color: #808080;
+    -light-bg: #f5f5f5;    
+}
+html{
+    font-size: 62,5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth; 
+    scroll-padding: 6rem;   
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--white);
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+a{ 
+    color: var(--light-color);
+    text-decoration: none;
+}
+section{
+    padding:  3rem 9%;
+}
+.heading{
+    font-size: 3,5rem;
+    font-weight: 500;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.header{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    z-index: 100;
+    
+}
+.header .logo{
+    margin-right: auto;
+    font-size: 2rem;
+    color: var(--white);
+}
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--white);
+    margin-left: 3rem;
+    padding: 7px 0px;
+}
+.header .navbar a:hover{
+    font-weight: bolder;
+    transition: 0,3s linear;
+}
+.header .menu{
+    font-size: 2rem;
+    color: var(--white);
+    display: none;
+}
+
+.header.active{
+    background: var(--white);
+    padding: 3rem 9%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header.active .logo{
+    font-weight: 700;
+}
+.header.active .logo,
+.header.active .navbar a,
+.header.active .menu{
+    color: var(--black)
+}
+/* icons */
+.home-icons{
+    margin-top: 60px;
+}
+.home-icons a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: 50%;
+    font-size: 25px;
+    color: var(--black);
+    text-align: center;
+    line-height: 35px;
+    margin-right: 15px;
+    border: 1px solid var(--white);
+}
+
+.home-icons a i{
+    font-size: 18px;
+}
+
+.home-icons a:hover{
+    background-color: var(--black);
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+
+.home{
+    width: 100%;
+    height: 100vh;
+    background: var(--black);
+    border-bottom-right-radius: 150px;
+}
+
+.home .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    width: 90%;
+    position: absolute;
+    top: 28%;
+    left: 15%;
+}
+
+.home .box-container .box h1 {
+  font-size: 6rem;
+  color: var(--white);
+  margin-top: 50px;
+}
+
+.home .box-container .box p{
+    font-size: 1.7rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.home .box-container .box .image{
+    height: 40rem;
+}
+
+.home .box-container .box .image img{
+    width: auto;
+    height: 470px;
+    border-radius: 10px;
+    border: 5px solid var(--white) ;
+}
+
+@media(max-width: 850px){
+    .home .box-container .box .image img{
+        display: none;
+    }
+    .home .box-container .box h1{
+        font-size: 4.5rem;
+    }
+} 
+/* home page animation */
+.animate-onload-from-left{
+    animation: 1s ease-in-out 0s 1  slideInFromLeft;
+}
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+    
+        transform: translateX(0);
+    }
+}
+.animate-onload-from-right{
+    animation: 1s ease-in-out 0s 1 slideInFromRight;
+}
+
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+ @media(max-width:1200px){
+    .header .menu{
+        padding: 2rem;
+    }
+    .header.active{
+        padding: 2rem;
+    }
+    section{
+        padding: 3rem 2rem;
+    } 
+    .home h1 {
+        font-size: 5rem;
+        
+
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 5rem 9%;
+        display: flex;
+        align-items: center;
+        z-index: 100;
+    }
+
+ }
+ @media(max-width: 991px){
+    html{ 
+        font-size: 60%;
+    }
+
+ }
+ @media(max-width:768px){
+    .header .menu{
+        display: block;
+    }
+    .header .navbar{
+        position: fixed;
+        top: 6.4rem;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        transform: translateX(100%);
+
+    }
+    .header .navbar.show{
+        transform: translateX(0);
+    }
+    .header .navbar a{
+        margin: 0;
+        margin: 2rem 0;
+        color: var(--black);
+        font-size: 2rem;
+
+    }
+ }
+ @media(max-width: 450px){
+    html{
+        font-size: 55%;
+
+    }
+
+ }
+
+ /* about */
+
+ .about .box-container .box .image{
+    height: 40rem;
+ }
+
+ .about .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+ }
+ .about .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    
+ }
+ .about .box-container .box{
+    font-size: 1.7rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: var(--light-color);
+    text-transform: none;
+
+ }
+   
+ /* services */
+ .services h1{
+    margin-bottom: 5rem;
+
+ }
+ .services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+ }
+ .services .box-container .box{
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+ }
+ .services .box-container .box img{
+    margin-bottom: 2rem;
+ }
+    .services .box-container .box h3{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .services .box-container .box p{
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: var(--light-color);
+    }
+    .services .box-container .box:hover{
+        background: var(--black);
+        scale: 1.1;
+    }
+    .services .box-container .box:hover h3,
+    .services .box-container .box:hover p{
+        color: var(--white);
+    }
+    .services .box-container .box:hover img{
+        filter: invert(1);
+    }
+    
